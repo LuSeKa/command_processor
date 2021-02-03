@@ -5,4 +5,4 @@ A small command processor to help accessing Arduino functions through the Serial
 void foo(int a, int b)
 ```
 
-See the examples folder for a usage exampmle.
+See the examples folder for a usage example.
