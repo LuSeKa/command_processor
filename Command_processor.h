@@ -40,7 +40,7 @@ class Command_processor {
 
     Command_processor();
     Command_processor(bool verbosity);
-    bool add_command(char key, bool (*command_handler)(int, int), uint8_t num_params, String help);
+    bool add_command(char key, void (*command_handler)(int, int), uint8_t num_params, String help);
     bool parse_command();
     void print_help();
     void set_verbose(bool verbose);

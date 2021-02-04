@@ -53,7 +53,7 @@
       set_verbose(verbosity);
     }
 
-    bool Command_processor::add_command(char key, bool (*command_handler)(int, int), uint8_t num_params, String help) {
+    bool Command_processor::add_command(char key, void (*command_handler)(int, int), uint8_t num_params, String help) {
       for (uint8_t i = 0; i < num_commands; i++) {
         if (commands[i].key == key) {
           cmd_info("Command key " + String(key) + " is already in use");
