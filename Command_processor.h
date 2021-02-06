@@ -1,7 +1,6 @@
- #include "Arduino.h"
+#include "Arduino.h"
 
 class Command_processor {
-    
   private:
 
     typedef enum Parser_state {
@@ -18,9 +17,8 @@ class Command_processor {
       bool in_use = false;
     } command_struct;
 
-    static const uint8_t num_commands = 10;
+    static const uint8_t num_commands = 20;
     static const uint8_t max_num_params = 2;
-    static const uint8_t max_help_length = 30;
     uint8_t parser_wait_time_ms = 10;
     uint8_t command_index = 0;
     uint8_t params[max_num_params];
@@ -34,7 +32,6 @@ class Command_processor {
     bool parse_params(int num_params);
     void flush_serial_buffer();
     void cmd_info(String info);
-
 
   public:
 
