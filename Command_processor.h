@@ -21,7 +21,7 @@ class Command_processor {
     static const uint8_t max_num_params = 2;
     uint8_t parser_wait_time_ms = 10;
     uint8_t command_index = 0;
-    uint8_t params[max_num_params];
+    int params[max_num_params];
     uint8_t num_commands_in_use = 0;
     int num_received_params = 0;
     bool verbose = true;
