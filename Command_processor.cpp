@@ -13,7 +13,7 @@ int Command_processor::get_num_params(char key) {
 bool Command_processor::parse_params(int num_params) {
   for (uint8_t i = 0; i < num_params; i++) {
     if (Serial.available() > 1) {
-      params[i] = Serial.parseInt();
+      params[i] = Serial.parseFloat();
     }
     else {
       return false;
@@ -52,7 +52,7 @@ Command_processor::Command_processor(bool verbosity) {
   set_verbose(verbosity);
 }
 
-bool Command_processor::add_command(char key, void (*command_handler)(int, int), uint8_t num_params, String help) {
+bool Command_processor::add_command(char key, void (*command_handler)(float, float), uint8_t num_params, String help) {
   for (uint8_t i = 0; i < num_commands; i++) {
     if (commands[i].key == key) {
       cmd_info("Command key " + String(key) + " is already in use");

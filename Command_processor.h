@@ -10,7 +10,7 @@ class Command_processor {
     } Parser_state;
 
     typedef struct command_struct {
-      void (*command_handler)(int, int) = NULL; // this is how all command handlers must look like
+      void (*command_handler)(float, float) = NULL; // this is how all command handlers must look like
       char key = ' ';
       uint8_t num_params = 0;
       String help = "Unused";
@@ -21,7 +21,7 @@ class Command_processor {
     static const uint8_t max_num_params = 2;
     uint8_t parser_wait_time_ms = 10;
     uint8_t command_index = 0;
-    int params[max_num_params];
+    float params[max_num_params];
     uint8_t num_commands_in_use = 0;
     int num_received_params = 0;
     bool verbose = true;
@@ -37,7 +37,7 @@ class Command_processor {
 
     Command_processor();
     Command_processor(bool verbosity);
-    bool add_command(char key, void (*command_handler)(int, int), uint8_t num_params, String help);
+    bool add_command(char key, void (*command_handler)(float, float), uint8_t num_params, String help);
     bool parse_command();
     void print_help();
     void set_verbose(bool verbose);
