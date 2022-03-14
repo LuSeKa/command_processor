@@ -1,8 +1,8 @@
 # command_processor
 
-A small command processor to help accessing Arduino functions through the Serial interface. Each function needs to be wrapped within a wrapper of the form 
+A lightweight command processor to help accessing Arduino functions through the Serial interface. Each function needs to either conform to this prototype or be wrapped in a wrapper of the form
 ```
-void foo(float a, float b)
+void foo(float a, float b){}
 ```
 
-See the examples folder for a usage example.
+See the examples folder for a minimal example.
